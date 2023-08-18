@@ -79,20 +79,23 @@ const App = () => {
 						{/* 購物車 */}
 						<h2 className="text-2xl font-bold text-primary">購物列表</h2>
 						<hr className="mt-2 mb-4" />
+						<div className="rounded-lg border-2 border-brown-light mt-4 p-4 text-center text-brown font-bold">
+							尚未選擇飲品～
+						</div>
 						<div className="rounded-lg border-2 border-brown-light mt-4 p-4">
 							<table className="min-w-full leading-normal">
 								<thead>
 									<tr>
-										<th className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
+										<th className="p-3 text-left text-xs font-semibold text-brown-light">
 											飲品資訊
 										</th>
-										<th className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
+										<th className="p-3 text-center text-xs font-semibold text-brown-light">
 											數量
 										</th>
-										<th className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
-											價錢
+										<th className="p-3 text-center text-xs font-semibold text-brown-light">
+											單價
 										</th>
-										<th className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
+										<th className="p-3 text-center text-xs font-semibold text-brown-light">
 											小計
 										</th>
 									</tr>
@@ -101,115 +104,116 @@ const App = () => {
 									{[1, 2, 3].map((item) => {
 										return (
 											<tr key={item}>
-												<td className="px-5 py-5 border-b border-gray-200">
+												<td className="p-3 border-b border-dashed border-brown-light">
 													<h3 className="text-xl text-brown font-medium">
 														四季春茶
 													</h3>
 													<p className="mt-1 text-md text-brown">
 														香醇四季春茶，回甘無比
 													</p>
-													<button type="button" className="mt-2">
+													<button
+														type="button"
+														className="mt-2 text-red-400 text-sm"
+													>
 														刪除品項
 													</button>
 												</td>
-												<td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-													<select name="" id="">
+												<td className="p-3 border-b border-dashed border-brown-light text-center text-md text-brown w-32">
+													<select
+														name="HeadlineAct"
+														id="HeadlineAct"
+														className="w-1/2 h-[32px] rounded-md text-center bg-brown-100 focus:outline-none focus:border-brown-dark"
+													>
 														<option value="1">1</option>
 														<option value="2">2</option>
 														<option value="3">3</option>
+														<option value="4">4</option>
+														<option value="5">5</option>
+														<option value="6">6</option>
+														<option value="7">7</option>
+														<option value="8">8</option>
+														<option value="9">9</option>
+														<option value="10">10</option>
 													</select>
 												</td>
-												<td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-													<p className="text-gray-900 whitespace-no-wrap">
-														$50
-													</p>
+												<td className="p-3 border-b border-dashed border-brown-light text-center text-md text-brown">
+													50
 												</td>
-												<td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-													$100
+												<td className="p-3 border-b border-dashed border-brown-light text-center text-md text-brown">
+													100
 												</td>
 											</tr>
 										);
 									})}
 								</tbody>
+								<tfoot>
+									<tr>
+										<td colSpan="3"></td>
+										<td colSpan="1" className="p-3">
+											<h3 className="text-center text-xl text-brown font-medium">
+												總計: ${500}
+											</h3>
+										</td>
+									</tr>
+								</tfoot>
 							</table>
+							<textarea
+								id="OrderNotes"
+								className="mt-1 w-full rounded-lg border border-brown-light p-3 focus:outline-none focus:border-brown-dark"
+								rows="2"
+								placeholder="備註"
+							></textarea>
+							<div className="text-right">
+								<button className="inline-block mt-1 px-4 py-2 w-[150px] text-md font-medium text-white bg-brown-light hover:bg-brown">
+									送出訂單
+								</button>
+							</div>
 						</div>
 					</div>
 				</div>
 
-				<div className="mt-4">
-					<div className="grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-8">
-						<div className="border lg:col-span-2">
-							{/* 訂單  */}
-							<h2 className="text-3xl font-bold underline text-primary">
-								訂單
-							</h2>
-							<div className="overflow-x-auto rounded-lg border border-gray-200">
-								<table className="min-w-full divide-y-2 divide-gray-200 bg-white text-sm">
-									<thead className="ltr:text-left rtl:text-right">
-										<tr>
-											<th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
-												Name
-											</th>
-											<th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
-												Date of Birth
-											</th>
-											<th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
-												Role
-											</th>
-											<th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
-												Salary
-											</th>
-										</tr>
-									</thead>
+				<hr className="mt-4 mb-6" />
 
-									<tbody className="divide-y divide-gray-200">
-										<tr>
-											<td className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
-												John Doe
-											</td>
-											<td className="whitespace-nowrap px-4 py-2 text-gray-700">
-												24/05/1995
-											</td>
-											<td className="whitespace-nowrap px-4 py-2 text-gray-700">
-												Web Developer
-											</td>
-											<td className="whitespace-nowrap px-4 py-2 text-gray-700">
-												$120,000
-											</td>
-										</tr>
+				<div className="mx-auto lg:w-3/5 w-full">
+					{/* 訂單  */}
 
-										<tr>
-											<td className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
-												Jane Doe
-											</td>
-											<td className="whitespace-nowrap px-4 py-2 text-gray-700">
-												04/11/1980
-											</td>
-											<td className="whitespace-nowrap px-4 py-2 text-gray-700">
-												Web Designer
-											</td>
-											<td className="whitespace-nowrap px-4 py-2 text-gray-700">
-												$100,000
-											</td>
-										</tr>
-
-										<tr>
-											<td className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
-												Gary Barlow
-											</td>
-											<td className="whitespace-nowrap px-4 py-2 text-gray-700">
-												24/05/1995
-											</td>
-											<td className="whitespace-nowrap px-4 py-2 text-gray-700">
-												Singer
-											</td>
-											<td className="whitespace-nowrap px-4 py-2 text-gray-700">
-												$20,000
-											</td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
+					<div className="rounded-lg border-2 border-brown-light mt-4 p-4 text-center text-brown font-bold">
+						尚未建立訂單～
+					</div>
+					<div className="rounded-lg border-2 border-brown-light mt-4 p-4 text-brown text-center">
+						<h2 className="text-2xl font-bold text-primary text-left">訂單</h2>
+						<p className="mt-1 text-md text-brown text-left">備註：...</p>
+						<div className="mt-2 mb-4">
+							<table className="w-full">
+								<thead className="border-b-2 border-brown-light">
+									<tr>
+										<th className="p-3 font-medium text-brown">品項</th>
+										<th className="p-3 font-medium text-brown">數量</th>
+										<th className="p-3 font-medium text-brown">小計</th>
+									</tr>
+								</thead>
+								<tbody className="">
+									{[1, 2, 3].map((item) => {
+										return (
+											<tr key={item} className="border-b border-brown-light">
+												<td className="p-3 text-brown">芒果綠茶</td>
+												<td className="p-3 text-brown">2</td>
+												<td className="p-3 text-brown">50</td>
+											</tr>
+										);
+									})}
+								</tbody>
+								<tfoot>
+									<tr>
+										<td colSpan="2"></td>
+										<td colSpan="1" className="p-3">
+											<h3 className="text-center text-xl text-brown font-medium">
+												總計: ${500}
+											</h3>
+										</td>
+									</tr>
+								</tfoot>
+							</table>
 						</div>
 					</div>
 				</div>

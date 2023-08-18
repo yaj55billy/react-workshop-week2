@@ -8,16 +8,17 @@ export default {
 			lg: "991px",
 			xl: "1280px",
 		},
-		colors: {
-			primary: "#988574",
-			brown: {
-				100: "#ede9e5",
-				light: "#a4927c",
-				DEFAULT: "#655746",
-				dark: "#4e4336",
+		extend: {
+			colors: {
+				primary: "#988574",
+				brown: {
+					100: "#ede9e5",
+					light: "#a4927c",
+					DEFAULT: "#655746",
+					dark: "#4e4336",
+				},
 			},
 		},
-		extend: {},
 	},
 	plugins: [],
 };
